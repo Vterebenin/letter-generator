@@ -49,8 +49,8 @@ const actions = {
   //     )
   //   },
 
-  changeText({ commit }, event) {
-    const text = event.target.value;
+  changeText({ commit }, inputText = "", event) {
+    const text = inputText || event.target.value;
     commit("setText", { text });
   },
   alertText() {

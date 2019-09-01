@@ -1,5 +1,5 @@
 <template>
-  <h1 v-show="text" class="b-output">{{text}}</h1>
+  <h1 v-show="outputText" class="b-output">{{ outputText }}</h1>
 </template>
 
 <script>
@@ -8,19 +8,19 @@ export default {
   name: "OutputOfTable",
   computed: {
     ...mapState({
-      text: state => {
+      outputText: state => {
         return state.letter.text;
       }
     })
   },
   created() {
-    this.$store.dispatch("letter");
   }
 };
 </script>
 
 <style scoped>
 .b-output {
+  flex: 1 0 50%;
   background-color: lightyellow;
 }
 </style>

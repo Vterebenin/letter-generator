@@ -1,8 +1,6 @@
 <template>
   <div class="b-input">
-    <h1 class="input__title">I will be an input</h1>
-    <input @change="changeText" type="text" />
-    <button @click="alertText">Alert</button>
+    <textarea class="input__content" type="text" />
   </div>
 </template>
 
@@ -19,8 +17,21 @@ export default {
     text: state => state.text
   }),
   methods: mapActions("letter", ["alertText", "changeText"]),
-  created() {
-    // console.log("123");
+  mounted() {
+    const textarea = document.body.querySelectorAll(
+      ".b-input .input__content"
+    )[0];
+    console.log(textarea);
+    textarea.onkeypress = e => {
+      const code = e.keyCode ? e.keyCode : e.which;
+      const text = e.target.value
+      console.log(code);
+      if ((code == 10) && (e.ctrlKey)) {
+        //Enter keycode
+        this.changeText(text)
+      }
+      console.log(CharacterData, e);
+    };
   }
 };
 </script>
@@ -28,5 +39,15 @@ export default {
 <style scoped>
 .b-input {
   background-color: red;
+  flex: 1 0 50%;
+}
+.b-input .input__content {
+  background: #222;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+.b-input .input__content:focus {
+  outline: none;
 }
 </style>
