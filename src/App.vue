@@ -1,17 +1,20 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div id="app" class="main-wrapper">
+    123qwe
+    <InputOfTable />
+    <OutputOfTable />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import InputOfTable from "./components/inputOfTable/InputOfTable.vue";
+import OutputOfTable from "./components/outputOfTable/OutputOfTable.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    InputOfTable,
+    OutputOfTable
   }
 };
 </script>
