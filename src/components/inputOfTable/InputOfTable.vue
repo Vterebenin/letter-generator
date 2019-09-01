@@ -1,10 +1,24 @@
 <template>
-  <h1 class="b-input">I will be an input</h1>
+  <div class="b-input">
+    <h1 class="input__title">I will be an input</h1>
+    <input v-model="text" type="text">
+    <button @click="alertText(text)">Alert</button>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "InputOfTable"
+  name: "InputOfTable",
+  data() {
+    return {
+      text: ""
+    }
+  },
+  methods: {
+    alertText(text) {
+      alert(this.text);
+    }
+  }
 };
 </script>
 

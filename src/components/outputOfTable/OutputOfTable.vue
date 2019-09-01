@@ -1,10 +1,15 @@
 <template>
-  <h1 class="b-output">I will be an output</h1>
+  <h1 class="b-output">{{output}}</h1>
 </template>
 
 <script>
 export default {
-  name: "OutputOfTable"
+  name: "OutputOfTable",
+  data() {
+    return {
+      output: "I will be an output"
+    }
+  }
 };
 </script>
 

@@ -1,6 +1,5 @@
 <template>
   <div id="app" class="main-wrapper">
-    123qwe
     <InputOfTable />
     <OutputOfTable />
   </div>
@@ -27,5 +26,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.main-wrapper {
+  display: flex;
+  justify-content: space-around;
+
 }
 </style>
