@@ -1,14 +1,20 @@
 <template>
-  <h1 class="b-output">{{output}}</h1>
+  <h1 v-show="text" class="b-output">{{text}}</h1>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "OutputOfTable",
-  data() {
-    return {
-      output: "I will be an output"
-    }
+  computed: {
+    ...mapState({
+      text: state => {
+        return state.letter.text;
+      }
+    })
+  },
+  created() {
+    this.$store.dispatch("letter");
   }
 };
 </script>

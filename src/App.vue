@@ -8,9 +8,10 @@
 <script>
 import InputOfTable from "./components/inputOfTable/InputOfTable.vue";
 import OutputOfTable from "./components/outputOfTable/OutputOfTable.vue";
-
+import store from './store';
 export default {
   name: "app",
+  store,
   components: {
     InputOfTable,
     OutputOfTable
